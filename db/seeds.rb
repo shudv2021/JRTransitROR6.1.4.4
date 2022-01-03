@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
+
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+users = User.create([
+    {second_name: 'Ivanov', first_name: 'Ivan', email: 'ivan@yandex.ru'},
+    {second_name: 'Petrov', first_name: 'Petr', email: 'petr@yandex.ru'},
+])
+
+transits = Transit.create([
+    {second_name: 'Client1', first_name: 'Client1', patronymic: 'Client1', tel: "9881111", email: "9881111@yandex",
+    weight: 10, length: 100, width: 15, height: 15, point_of_departure: 'Нижний Новгород', 
+    destination: 'Москва', distance: nil, price: nil, user_id: users[0]},
+    {second_name: 'Client2', first_name: 'Client2', patronymic: 'Client2', tel: "9882222", email: "9882222@yandex",
+    weight: 10, length: 100, width: 15, height: 15, point_of_departure: 'Нижний Новгород',
+    destination: 'Москва', distance: nil, price: nil, user_id: users[0]},
+    {second_name: 'Client3', first_name: 'Client3', patronymic: 'Client3', tel: "988333", email: "9883333@yandex",
+    weight: 10, length: 100, width: 15, height: 15, point_of_departure: 'Нижний Новгород',
+    destination: 'Москва', distance: nil, price: nil, user_id: users[0]}
+
+])

@@ -1,0 +1,48 @@
+
+<h1> Transits for operator <%= 'current_user'%> </h1>
+<div class="container-fluid">
+<table class="table table-bordered">
+
+ <thead class="thead-dark">
+        <tr>
+   
+            <th > Name </th>
+            <th> Second name </th>
+            <th> Patronimyc </th>
+            <th> Phone number</th>
+            <th> email </th>
+            <th> weight </th>
+            <th> lengh </th>
+            <th> widht </th>
+            <th> height </th>
+            <th> Point_of_departure </th>
+            <th> Destination</th>
+            <th> Transit distancr</th>
+            <th> Price </th>
+        </tr>
+</thead>
+
+ <tbody>
+    <%@transits.each do |transit|%>
+    <tr>
+        <td> <%=transit.first_name%> </td>
+        <td> <%=transit.second_name%> </td>
+        <td> <%=transit.patronymic%> </td>
+        <td> <%=transit.tel%> </td>
+        <td> <%=transit.email%> </td>
+        <td> <%=transit.weight%> </td>
+        <td> <%=transit.length%> </td>
+        <td> <%=transit.width%> </td>
+        <td> <%=transit.height%> </td>
+        <td> <%=transit.point_of_departure%> </td>
+        <td> <%=transit.destination%> </td>
+        <td> <%=transit.distance%> </td>
+        <td> <%=transit.price%> </td>
+    </tr>
+    <%end%>
+ </tbody>
+        
+</table>
+</div>
+
+

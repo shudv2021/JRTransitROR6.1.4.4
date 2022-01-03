@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-root 'pages#index'
+
+  get '/transits', to: 'transits#index'
+
+  root 'pages#index'
+
 end

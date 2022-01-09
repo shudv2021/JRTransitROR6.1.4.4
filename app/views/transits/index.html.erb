@@ -1,11 +1,10 @@
 
 <h1> Transits for operator <%= 'current_user'%> </h1>
 <div class="container-fluid">
-<table class="table table-bordered">
+<table class="table table-sm table-bordered border-secondary">
 
- <thead class="thead-dark">
+ <thead class="table-dark">
         <tr>
-   
             <th > Name </th>
             <th> Second name </th>
             <th> Patronimyc </th>
@@ -19,6 +18,9 @@
             <th> Destination</th>
             <th> Transit distancr</th>
             <th> Price </th>
+            <th> Action </th>
+
+            
         </tr>
 </thead>
 
@@ -38,6 +40,7 @@
         <td> <%=transit.destination%> </td>
         <td> <%=transit.distance%> </td>
         <td> <%=transit.price%> </td>
+        <td> <%= link_to "Edit", edit_transit_path(transit), class: 'btn btn-secondary'%></td>
     </tr>
     <%end%>
  </tbody>

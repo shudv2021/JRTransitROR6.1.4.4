@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 #may gems
 # gem 'bootstrap', '~> 4.0'
+gem 'devise', '~>4.0'
+gem 'pry'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

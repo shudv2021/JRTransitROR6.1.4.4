@@ -13,8 +13,10 @@
 
   <body>
   
-<%= render "layouts/navbar" %>  
-    <%= yield %>
+<%= render "layouts/navbar" %>
+<%render "shared/flash"%>
+
+  <%= yield %>
   </body>
   
 </html>

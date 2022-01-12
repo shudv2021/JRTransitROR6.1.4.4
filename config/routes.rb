@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-resources :transits, only: [:index, :new, :create, :edit, :update, :show, :destory]
 
+  root 'pages#index'
+  
+  devise_for :users, path: :transit, path_names: {sign_in: :login, sign_out: :exit}
+  
+  # resources :transits, only: [:index, :new, :create, :edit, :update, :show, :destory]
+  
   # get '/transits', to: 'transits#index'
   # get '/transits/new', to: 'transits#new'
   # post '/transits', to: 'transits#create'
   # get '/transits/:id/edit', to: 'transits#edit'
   
-  root 'pages#index'
-
+  resources :users do
+    resources :transits, shallow: true
+  end
+  
 end

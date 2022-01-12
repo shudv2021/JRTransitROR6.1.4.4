@@ -1,7 +1,11 @@
 class TransitsController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :set_transit, only: [:edit, :update, :destory]
+  
+  
   def index
-    @transits = Transit.all
+    @transits = Transit.where(user_id: current_user.id)
   end
 
   def new
@@ -10,21 +14,21 @@ class TransitsController < ApplicationController
 
   def create
     @transit = Transit.new(transit_params)
+    @transit.user_id = current_user.id
+    
     if @transit.save
-      redirect_to transits_path
+      redirect_to user_transits_path
     else
     render :new
     end
   end
   
   def edit
-    @transit = Transit.find_by(id: params[:id])
   end
 
   def update
-    @transit = Transit.find_by(id: params[:id])
     if @transit.update(transit_params)
-      redirect_to transits_path
+      redirect_to user_transits_path(current_user)
     else
     render :new
     end
@@ -38,4 +42,8 @@ private
                                     :destination)
   end
 
+  def set_transit
+    @transit = Transit.find(params[:id])
+  end
+  
 end

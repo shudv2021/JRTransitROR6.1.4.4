@@ -1,4 +1,7 @@
 class Transit < ApplicationRecord
+    
+    belongs_to :user
+    
     validates :second_name, 
                 :first_name,
                 :patronymic,
@@ -10,5 +13,7 @@ class Transit < ApplicationRecord
                 :height,
                 :point_of_departure,
                 :destination, presence: true
+                
+
 
 end

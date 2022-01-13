@@ -18,11 +18,11 @@ Rails.application.routes.draw do
   end
   
   resources :transits, only: :index do
-    #Альтернативный способ записи
-    # member do
-    #   post :calculate
-    # end
     post :calculate, on: :member
   end
     
+  namespace :admin do
+    resources :transits
+  end
+  
 end

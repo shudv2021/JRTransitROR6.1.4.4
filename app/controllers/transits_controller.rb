@@ -3,7 +3,6 @@ class TransitsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_transit, only: [:edit, :update, :destory]
   
-  
   def index
     @transits = Transit.where(user_id: current_user.id)
   end
@@ -33,6 +32,16 @@ class TransitsController < ApplicationController
     render :new
     end
   end
+  
+  
+  
+  def destroy
+    
+  end
+  
+  def calk
+  end
+  
   
 private
 

@@ -14,7 +14,7 @@ class CreateTransits < ActiveRecord::Migration[6.1]
       t.string :destination
       t.integer :distance
       t.integer :price
-      t.references :user, foreign_key: true 
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

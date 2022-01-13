@@ -1,5 +1,5 @@
 
-<h1> Transits for operator <%= 'current_user'%> </h1>
+<h1> Transits by operator <%= "#{current_user.first_name}" %> </h1>
 <div class="container-fluid">
 <table class="table table-sm table-bordered border-secondary">
 
@@ -11,20 +11,20 @@
             <th> Phone number</th>
             <th> email </th>
             <th> weight </th>
-            <th> lengh </th>
+            <th> length </th>
             <th> widht </th>
             <th> height </th>
             <th> Point_of_departure </th>
             <th> Destination</th>
-            <th> Transit distancr</th>
-            <th> Price </th>
+            <th> Distance(km)</th>
+            <th> Price  (rub)</th>
             <th> Action </th>
 
             
         </tr>
 </thead>
 
- <tbody>
+<tbody>
     <%@transits.each do |transit|%>
     <tr>
         <td> <%=transit.first_name%> </td>
@@ -40,12 +40,26 @@
         <td> <%=transit.destination%> </td>
         <td> <%=transit.distance%> </td>
         <td> <%=transit.price%> </td>
-        <td> <%= link_to "Edit", edit_transit_path(transit), class: 'btn btn-secondary'%></td>
+        <td> 
+            <%= link_to "Calс", calculate_transit_path(transit), data: {method: :post, confirm: 'Calсulat distance/price?'}, class: 'btn btn-secondary'%> 
+            <%= link_to "Edit", edit_transit_path(transit), class: 'btn btn-secondary'%>
+            <%= link_to "Delete", transit_path(transit), data: {method: :delete, confirm: 'Are you sure?'}, class: 'btn btn-secondary'%>
+        </td>
     </tr>
     <%end%>
  </tbody>
         
 </table>
+
+<div>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <%= link_to "Create new transint", new_user_transit_path, class: "btn btn-outline-secondary" %>
+    <button class="btn btn-outline-secondary" type="button">Main button</button>
+    <button class="btn btn-sm align-middle btn-outline-secondary" type="button">Smaller button</button>
+  </form>
+</nav>
+</div>
 </div>
 
 

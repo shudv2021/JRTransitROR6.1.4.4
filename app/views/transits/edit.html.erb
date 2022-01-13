@@ -1,2 +1,51 @@
 <h1>Edit transit</h1>
-<%=render 'form'%>
+<h1>for <%=current_user.first_name %> </h1>
+  <%= form_with model: @transit do |f|%>
+    <div class="form-group">
+      <%=f.label :first_name%>
+      <%=f.text_field :first_name, presence: true %>
+    </div>
+    <div class="form-group">
+      <%=f.label :second_name%> 
+      <%=f.text_field :second_name, presence: true%> 
+    </div>
+    <div class="form-group">
+      <%=f.label :patronymic%> 
+      <%=f.text_field :patronymic, presence: true%> 
+    </div>
+    <div class="form-group">
+      <%=f.label :tel%> 
+      <%=f.text_field :tel, presence: true%> 
+    </div>
+    <div class="form-group">
+      <%=f.label :email%> 
+      <%=f.text_field :email, presence: true%> 
+    </div>
+    <div class="form-group">
+      <%=f.label :weight%> 
+      <%=f.number_field :weight, presence: true%>
+    </div>
+    <div class="form-group">
+      <%=f.label :length%> 
+      <%=f.number_field :length, presence: true%> 
+    </div>
+    <div class="form-group">
+      <%=f.label :width%> 
+      <%=f.number_field :width, presence: true%>
+    </div>
+    <div class="form-group">
+      <%=f.label :height%> 
+      <%=f.number_field :height, presence: true%>
+    </div>
+    <div class="form-group">
+      <%=f.label :point_of_departure%> 
+      <%=f.text_field :point_of_departure, presence: true%> 
+    </div>
+    <div class="form-group">
+      <%=f.label :destination%> 
+      <%=f.text_field :destination, presence: true%> 
+    </div>
+    <div class="form-group">
+      <%=f.submit 'Save new transit', class: 'btn btn-secondary' %>
+    </div>
+  <%end%>

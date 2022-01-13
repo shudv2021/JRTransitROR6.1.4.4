@@ -1,15 +1,15 @@
-class Calkulate
+class Calculate
   
 ROOT_ENDPOINT = 'http://router.project-osrm.org/trip/v1/driving/'
 RESPONSE_PARAMS = '?overview=false'
 TRANSIT_CATEGORYES = {:small=>1.0, :big_light=>2.0, :big_heavy=>3.0}
+
   def initialize(start, finish, volume, weight)
     @start = start
     @finish = finish
     @volume = volume
     @weight = weight
     @request = ''
-  
   end
   
   def get_distance
@@ -24,7 +24,7 @@ TRANSIT_CATEGORYES = {:small=>1.0, :big_light=>2.0, :big_heavy=>3.0}
     category = :big_light if @volume > 1.0 && @weight <= 10
     category = :big_heavy if @volume > 1.0 && @weight > 10
         
-    self.get_distance*TRANSIT_CATEGORYES[category]
+    self.get_distance * TRANSIT_CATEGORYES[category]
   end
   
   

@@ -41,9 +41,9 @@
         <td> <%=transit.distance%> </td>
         <td> <%=transit.price%> </td>
         <td> 
-            <%= link_to "Calk", edit_transit_path(transit), class: 'btn btn-secondary'%>
+            <%= link_to "Calс", calculate_transit_path(transit), data: {method: :post, confirm: 'Calсulat distance/price?'}, class: 'btn btn-secondary'%> 
             <%= link_to "Edit", edit_transit_path(transit), class: 'btn btn-secondary'%>
-            <%= link_to "Delete", edit_transit_path(transit), class: 'btn btn-secondary'%>
+            <%= link_to "Delete", transit_path(transit), data: {method: :delete, confirm: 'Are you sure?'}, class: 'btn btn-secondary'%>
         </td>
     </tr>
     <%end%>

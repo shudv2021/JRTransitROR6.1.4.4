@@ -12,7 +12,17 @@ Rails.application.routes.draw do
   # get '/transits/:id/edit', to: 'transits#edit'
   
   resources :users do
-    resources :transits, shallow: true
+    resources :transits, shallow: true do
+    end
+    
   end
   
+  resources :transits, only: :index do
+    #Альтернативный способ записи
+    # member do
+    #   post :calculate
+    # end
+    post :calculate, on: :member
+  end
+    
 end

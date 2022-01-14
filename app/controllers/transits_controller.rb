@@ -43,7 +43,7 @@ class TransitsController < ApplicationController
     finish = @transit.destination
     volume = (@transit.length * @transit.width * @transit.height / 1000000.0).round(2)
     weight = @transit.weight
-    calculation = Calculate1.new(start, finish, volume, weight)
+    calculation = Calculate.new(start, finish, volume, weight)
     @transit.distance = calculation.get_distance || 0
     @transit.price = calculation.get_price || 0
     @transit.save
